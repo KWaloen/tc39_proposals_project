@@ -1,4 +1,3 @@
-import ast
 import requests
 import base64
 import os
@@ -14,7 +13,14 @@ def sendToObsidian(obsidianFile, apiFile):
     with open(f"{apiFile}/outputMD/apiResults.md", "r") as file:
         fileContent = file.readlines()
 
-    data_list = [ast.literal_eval(line.strip()) for line in fileContent]
+    data_list = []
+    for line in fileContent:
+        # remove whitespace/newline
+        stripped = line.strip()
+        # create dictionary from stripped line
+        item = eval(stripped)
+        # collect it
+        data_list.append(item)
 
     # Iterate over each dictionary and use pattern matching
     for entry in data_list:

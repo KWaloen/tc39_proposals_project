@@ -30,8 +30,19 @@
               "icon": "lucide-file",
               "title": "index"
             }
+          },
+          {
+            "id": "8de27586d9d37e39",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -179,7 +190,7 @@
       "publish:Publish changes...": false
     }
   },
-  "active": "0bd472477d508b7e",
+  "active": "8de27586d9d37e39",
   "lastOpenFiles": [
     "Analysis/Stages/Plots/InactivePlot1.pdf",
     "Analysis/Classifications/Unknown.md",
