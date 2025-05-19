@@ -19,9 +19,7 @@ This function extracts the details of the proposals from the file content
 
 '''
 def prepText(fileContent):
-
-    global proposals
-
+    
     first = fileContent.index("|")
     last = fileContent.rindex("|")
 
@@ -68,8 +66,7 @@ def extractDetails(text, fileContent):
             "GitHub Link": links[i], 
             "GitHub Note Link": proposalNoteLinks[i]})
 
-    #first line contains table title and line. remove this  
-
+    #first line contains table title and line. remove this 
     return proposals
 
 '''
@@ -108,7 +105,6 @@ def extractTitle(words, saveTitlesIn, saveLinksIn):
 
 
 def matchLinkWithProposal(linkTitles, proposalLinks):
-
     for each in linkTitles:
         addBrackets = "[" + each + "]"
         link = proposalLinks.get(addBrackets)
@@ -127,7 +123,6 @@ This function extracts the author of the proposals from the file content
 '''
 
 def extractAuthor(words):
-    global authors
     author = words[2].strip()
     names = author.replace("<br />", ", ")
     authors.append(names)
@@ -137,7 +132,6 @@ This function extracts the champion of the proposals from the file content
 '''
 
 def extractChampion(words):
-    global champions 
     champion = words[3].strip()
     names = champion.replace("<br />", ", ")
     champions.append(names)
@@ -147,7 +141,6 @@ This function extracts the date of the proposals from the file content
 '''
 
 def extractDate(words):
-    global dates 
 
     try:
         date = words[4].strip()
@@ -176,8 +169,6 @@ This function extracts the proposal link from the file content
 '''
 
 def extractProposalLink(words):
-    global notesLinks
-    global proposalLinks
 
     first = words.rindex("|")
     links = words[first:].splitlines()
