@@ -7,10 +7,6 @@ stage2Extract = []
 
 def delegateDetails(fileContent):
 
-    global stage3Extract
-    global stage2_7Extract
-    global stage2Extract
-
     stage3Title = fileContent.index("### Stage 3\n")
     stage2_7Title = fileContent.index("### Stage 2.7\n")
     stage2Title = fileContent.index("### Stage 2\n")
